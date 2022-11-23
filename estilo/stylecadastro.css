@@ -31,11 +31,12 @@ header {
     margin: auto;
     background-color: var(--cor02);
     width: 400px;
-    height: 500px;
+    height: 580px;
     border-radius: 5px;
 }
 
 header h1 {
+    text-shadow: 2px 2px rgb(0, 0, 0);
     font-size: 2em;
     text-align: center;
     padding: 10px;
@@ -48,14 +49,14 @@ nav {
     position: relative;
     margin: 10px;
     text-align: left;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 nav input {
     border: none;
     outline: none;
     border-radius: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 5px;
     width: 99%;
     font-size: 1em;
@@ -63,9 +64,14 @@ nav input {
 
 #btn_enviar {
     cursor: pointer;
-    width: 30%;
-    margin-left: 70%;
-    margin-bottom: 20%;
+    margin: auto;
+    width: 100%;
+    margin-top: 10%;
+}
+
+#btn_enviar:hover {
+    background-color: var(--cor01);
+    transition: ease-in-out .3s;
 }
 
 hr {
@@ -88,4 +94,11 @@ a {
 
 a:hover {
     color: var(--cor03);
+}
+
+.error {
+    background-color: orangered;
+    color: #fff;
+    padding: 5px;
+    margin: 5px;
 }
