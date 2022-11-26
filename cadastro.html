@@ -1,43 +1,40 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construção</title>
-    <link rel="stylesheet" href="estilo/stylecadastro.css">
-</head>
+    <link rel="stylesheet" href="estilo/stylecadastro.css" />
+  </head>
 
-<body>
+  <body>
     <main>
-        <section>
-            <header>
-                <h1>Crie sua conta</h1>
-                <hr>
-                <div class="msg"></div>
-                <nav>
-                    <form action="cadastro.html" method="post" id="form">
+      <section>
+        <header>
+          <h1>Crie sua conta</h1>
+          <hr />
+          <div class="msg"></div>
+          <nav>
+            <form action="login.html" method="post" id="form">
+              <label for="name">Nome</label><br />
+              <input type="text" name="name" id="name" />
 
-                        <label for="name">Nome</label><br>
-                        <input type="text" name="name" id="name">
-                        
-                        <label for="email">E-mail</label><br>
-                        <input type="email" name="email" id="email">
+              <label for="email">E-mail</label><br />
+              <input type="email" name="email" id="email" />
 
-                        <label for="password">Senha</label><br>
-                        <input type="password" name="password" id="password">
+              <label for="password">Senha</label><br />
+              <input type="password" name="password" id="password" />
 
-                        <label for="cpassword">Confirmar senha</label><br>
-                        <input type="password" name="cpassword" id="cpassword">
+              <label for="cpassword">Confirmar senha</label><br />
+              <input type="password" name="cpassword" id="cpassword" />
 
-                        <input type="submit" value="Cadastrar-se" id="btn_enviar">
-                    </form>
-                </nav>
-            </header>
-        </section>
+              <button type="submit" id="btn_enviar">Cadastrar-se</button>
+            </form>
+          </nav>
+        </header>
+      </section>
     </main>
     <script src="script/script.js" defer></script>
-</body>
-
+  </body>
 </html>
