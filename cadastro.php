@@ -1,3 +1,10 @@
+<?php
+  if(isset($_POST['submit'])){
+    print_r($_POST['name']);
+    print_r($_POST['email']);
+    print_r($_POST['password']);
+  }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -16,7 +23,7 @@
           <hr />
           <div class="msg"></div>
           <nav>
-            <form action="login.html" method="post" id="form">
+            <form action="cadastro.php" method="post" id="form">
               <label for="name">Nome</label><br />
               <input type="text" name="name" id="name" />
 
@@ -29,7 +36,7 @@
               <label for="cpassword">Confirmar senha</label><br />
               <input type="password" name="cpassword" id="cpassword" />
 
-              <button type="submit" id="btn_enviar">Cadastrar-se</button>
+              <button type="submit" id="btn_enviar" name="submit" onclick="enviaFormulario()">Cadastrar-se</button>
             </form>
           </nav>
         </header>
