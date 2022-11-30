@@ -62,6 +62,11 @@ nav input {
     padding-left: 6px;
 }
 
+#msgUsers {
+    color: white;
+    font-size: 1em;
+}
+
 #btn_enviar {
     border: none;
     border-radius: 4px;

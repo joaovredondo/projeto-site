@@ -7,12 +7,16 @@ const cpasswordInput = document.querySelector("#cpassword");
 const msgError = document.querySelector(".msg");
 const regexNomeNum = '[0-9]';
 const regexNome = '[a-zA-Zà-úÀ-Ú\s]';
-const regexEmail = '/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/gi';
+const regexEmail = '^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+).(\.[a-z]{2,3})$';
 const regexEspeciais = '[@!#$%^&*()/\]';
 
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-})
+function enviaFormulario() {
+    validaCampos();
+
+    if (validaCampos()) {
+        buttonSubmit.setAttribute("type", "submit");
+    }
+}
 
 function validaCampos() {
 
@@ -33,6 +37,8 @@ function validaCampos() {
         msgError.textContent = 'Campo nome não pode conter caracteres numéricos.';
         msgError.classList.add("error");
         return false;
+    } else if (!emailValue.match(regexEmail)) {
+        msgError.textContent = 'Preencha o campo E-mail corretamente.'
     } else if (emailValue.length <= 11) {
         msgError.textContent = 'Preencha o campo e-mail corretamente.';
         msgError.classList.add("error");

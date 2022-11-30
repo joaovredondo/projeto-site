@@ -16,16 +16,16 @@
                 <h1>Acesse sua conta</h1>
                 <hr>
                 <nav>
-                    <form action="#" method="post">
+                    <form action="verificaLogin.php" method="POST">
                         <label for="email">E-mail</label>
                         <input type="email" name="email" id="email">
                         <label for="password">Senha</label>
                         <input type="password" name="password" id="password">
-                        <input type="submit" value="Entrar" id="btn_enviar">
+                        <input type="submit" name="submit" value="Entrar" id="btn_enviar">
                     </form>
                 </nav>
                 <hr>
-                <p>Não possui uma conta? <a href="cadastro.php">Cadastre-se aqui</a></p>
+                <p>Não possui uma conta? <a href="../projeto-site/php/cadastro.php">Cadastre-se aqui</a></p>
             </header>
         </section>
     </main>

@@ -1,9 +1,9 @@
 <?php
-  if(isset($_POST['submit'])){
-    print_r($_POST['name']);
-    print_r($_POST['email']);
-    print_r($_POST['password']);
-  }
+
+  session_start();
+  include_once("connect.php");
+  include_once("insert.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Construção</title>
-    <link rel="stylesheet" href="estilo/stylecadastro.css" />
+    <link rel="stylesheet" href="../estilo/stylecadastro.css" />
   </head>
 
   <body>
@@ -20,7 +20,25 @@
       <section>
         <header>
           <h1>Crie sua conta</h1>
+
           <hr />
+
+          <div id="msgUsers">
+          <?php
+            if(isset($_SESSION['errorCadastro'])){
+              echo $_SESSION['errorCadastro'];
+              unset($_SESSION['errorCadastro']);
+            }
+
+
+            if(isset($_SESSION['confirmCadastro'])){
+              echo  $_SESSION['confirmCadastro'];
+              unset( $_SESSION['confirmCadastro']);
+            }
+           
+          ?>
+          </div>
+
           <div class="msg"></div>
           <nav>
             <form action="cadastro.php" method="post" id="form">
@@ -36,12 +54,12 @@
               <label for="cpassword">Confirmar senha</label><br />
               <input type="password" name="cpassword" id="cpassword" />
 
-              <button type="submit" id="btn_enviar" name="submit" onclick="enviaFormulario()">Cadastrar-se</button>
+              <button type="button" id="btn_enviar" name="submit" onclick="enviaFormulario()">Cadastrar-se</button>
             </form>
           </nav>
         </header>
       </section>
     </main>
-    <script src="script/script.js" defer></script>
+    <script src="../script/script.js" defer></script>
   </body>
 </html>
