@@ -2,7 +2,7 @@
 
   session_start();
   include_once("connect.php");
-  include_once("insert.php");
+  include_once("insertUser.php");
 
 ?>
 <!DOCTYPE html>
@@ -22,22 +22,6 @@
           <h1>Crie sua conta</h1>
 
           <hr />
-
-          <div id="msgUsers">
-          <?php
-            if(isset($_SESSION['errorCadastro'])){
-              echo $_SESSION['errorCadastro'];
-              unset($_SESSION['errorCadastro']);
-            }
-
-
-            if(isset($_SESSION['confirmCadastro'])){
-              echo  $_SESSION['confirmCadastro'];
-              unset( $_SESSION['confirmCadastro']);
-            }
-           
-          ?>
-          </div>
 
           <div class="msg"></div>
           <nav>

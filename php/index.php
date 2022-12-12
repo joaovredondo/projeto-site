@@ -1,17 +1,12 @@
 <?php
-    session_start();
+  session_start();
+  include_once("connect.php");
 
-    //print_r($_SESSION);
-
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['password']) == true)){
-        unset($_SESSION['email']);
-        unset($_SESSION['password']);
-        header('Location: ../login.php');
-    }
-
-    $login = $_SESSION['email'];
+  if(!isset($_SESSION['email'])){
+    header("Location: login.php");
+    $_SESSION['msgError'] = "Email ou senha incorretos.";
+  }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,8 +33,6 @@
     </nav>
 
     <?php
-
-        echo "<h1>Olá, $login</h1>";
 
     ?>
   </body>

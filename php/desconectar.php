@@ -1,8 +1,10 @@
 <?php
 
 session_start();
-unset($_SESSION['email']);
-unset($_SESSION['password']);
-header('Location: ../login.php');
+
+if(isset($_SESSION['email'])){
+    session_destroy();
+    header("Location: login.php");
+}
 
 ?>
